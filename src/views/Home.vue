@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <h1>{{msg.a}}</h1>
-    <img alt="Vue logo" src="@/assets/logo.png">
     <HelloWorld :msg="msg" @toparent="getIt"/>
   </div>
 </template>
