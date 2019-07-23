@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>{{ cmsg }}</h1>
+    <button @click="changeData">改变数据</button>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -34,7 +35,24 @@
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
+    msg: Object
+  },
+  data(){
+    return{
+      cmsg:''
+    }
+  },
+  computed:{
+  },
+  created(){
+    this.cmsg=this.msg.a
+  },
+  methods:{
+    changeData(){
+      this.cmsg='123'
+      //给父组件广播数据
+      this.$emit('toparent',this.cmsg)
+    }
   }
 }
 </script>
